@@ -1,216 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashmit Singh | Digital Architect</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ashmit Singh — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                        "accent-cyan": "#06b6d4",
+                        "accent-violet": "#8b5cf6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "outfit": ["Outfit", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light-leak-cyan {
+            background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+        }
+
+        .light-leak-violet {
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+        }
+
+        .font-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        .section-padding {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="scroll-progress"></div>
-    <!-- Cinematic Background -->
-    <div class="bg-scene">
-        <div class="aura aura-1"></div>
-        <div class="aura aura-2"></div>
-    </div>
+<body class="bg-background-dark font-display text-slate-100 selection:bg-primary/30">
+    <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Background Light Effects -->
+        <div class="fixed inset-0 pointer-events-none z-0">
+            <div class="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] light-leak-cyan blur-[80px]"></div>
+            <div class="absolute top-[20%] -right-[10%] w-[50%] h-[50%] light-leak-violet blur-[80px]"></div>
+        </div>
 
-    <nav class="navbar">
-        <div class="nav-container container">
-            <div class="nav-left">
-                <a href="#" class="logo">
-                    <div class="logo-icon"></div>
-                    ASHMIT<span>.</span>
+        <!-- Header Nav -->
+        <header
+            class="fixed top-0 left-0 right-0 z-50 flex items-center bg-transparent p-4 justify-between backdrop-blur-sm lg:px-20">
+            <div class="text-slate-100 flex size-10 shrink-0 items-center justify-center glass-panel rounded-lg">
+                <span class="material-symbols-outlined text-2xl">terminal</span>
+            </div>
+            <h2 class="text-slate-100 text-lg font-bold font-outfit leading-tight tracking-widest flex-1 text-center">
+                ASHMIT</h2>
+            <div class="flex w-10 items-center justify-end">
+                <!-- Removed login/account -->
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="relative z-10 flex-1 flex flex-col px-6 pt-24 lg:px-40 lg:pt-40">
+
+            <!-- Hero Section -->
+            <section id="home" class="flex flex-col mb-20 lg:mb-40">
+                <div
+                    class="inline-flex items-center self-start px-3 py-1 rounded-full glass-panel mb-6 border-primary/20">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse mr-2"></span>
+                    <span class="text-xs font-medium uppercase tracking-widest text-primary">Available for new
+                        projects</span>
+                </div>
+                <h1
+                    class="font-outfit tracking-tight text-[42px] lg:text-[80px] font-bold leading-[1.1] text-left pb-6">
+                    Building Digital <br class="hidden lg:block" />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-cyan">Experiences</span>
+                    <br />
+                    with Precision
+                </h1>
+                <p
+                    class="text-slate-400 text-lg lg:text-xl font-normal leading-relaxed pb-8 max-w-[90%] lg:max-w-[60%]">
+                    Developer & Creative focused on crafting premium cinematic interfaces and intelligent automation
+                    systems.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <button onclick="document.getElementById('projects').scrollIntoView()"
+                        class="flex w-full md:w-auto px-8 cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 bg-primary text-white gap-3 text-base font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        <span class="truncate">View My Work</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <div class="flex gap-4">
+                        <a href="mailto:ashmitsingh0402@gmail.com"
+                            class="flex-1 md:w-auto md:px-6 flex cursor-pointer items-center justify-center rounded-xl h-14 glass-panel text-slate-100 gap-2 font-semibold hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined">mail</span>
+                            <span>Contact</span>
+                        </a>
+                        <button
+                            class="flex-1 md:w-auto md:px-6 flex cursor-pointer items-center justify-center rounded-xl h-14 glass-panel text-slate-100 gap-2 font-semibold hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined">download</span>
+                            <span>Resume</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+                    <div class="glass-panel p-5 rounded-xl flex flex-col gap-1">
+                        <span class="text-3xl font-bold font-outfit text-primary">04+</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Years Exp.</span>
+                    </div>
+                    <div class="glass-panel p-5 rounded-xl flex flex-col gap-1">
+                        <span class="text-3xl font-bold font-outfit text-accent-cyan">42</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Projects Done</span>
+                    </div>
+                    <div class="glass-panel p-5 rounded-xl flex flex-col gap-1">
+                        <span class="text-3xl font-bold font-outfit text-accent-violet">12</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Clients
+                            Served</span>
+                    </div>
+                    <div class="glass-panel p-5 rounded-xl flex flex-col gap-1">
+                        <span class="text-3xl font-bold font-outfit text-slate-100">99%</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Satisfaction</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section-padding lg:mb-20">
+                <span class="text-xs font-bold tracking-widest text-primary uppercase mb-4 block">// ABOUT ME</span>
+                <h2 class="font-outfit text-3xl lg:text-5xl font-bold mb-8">Crafting the future of <span>interface
+                        design.</span></h2>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        I am a developer based in the digital realm, dedicated to building high-performance applications
+                        with a focus on luxury aesthetic and seamless user flow. My work bridges the gap between complex
+                        backend logic and pixel-perfect frontend experiences.
+                    </p>
+                    <div class="glass-panel p-8 rounded-2xl border-l-4 border-primary">
+                        <p class="italic text-slate-300">"Focused on high-performance cinematic interfaces with seamless
+                            interactivity and scalable backend architectures."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stack Section -->
+            <section id="stack" class="section-padding lg:mb-20">
+                <span class="text-xs font-bold tracking-widest text-primary uppercase mb-4 block">// TECHNICAL
+                    STACK</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Programming -->
+                    <div class="glass-panel p-6 rounded-2xl hover:border-primary/50 transition-colors">
+                        <h3 class="font-outfit font-bold text-xl mb-4 text-accent-cyan">Programming</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">JavaScript</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">TypeScript</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Dart</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">PHP</span>
+                        </div>
+                    </div>
+                    <!-- Frontend -->
+                    <div class="glass-panel p-6 rounded-2xl hover:border-primary/50 transition-colors">
+                        <h3 class="font-outfit font-bold text-xl mb-4 text-accent-violet">Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">React</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Tailwind</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Flutter</span>
+                        </div>
+                    </div>
+                    <!-- AI & Backend -->
+                    <div class="glass-panel p-6 rounded-2xl hover:border-primary/50 transition-colors">
+                        <h3 class="font-outfit font-bold text-xl mb-4 text-primary">AI & Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Express</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Groq API</span>
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section-padding mb-20">
+                <span class="text-xs font-bold tracking-widest text-primary uppercase mb-4 block">// SELECTED
+                    WORKS</span>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl glass-panel p-8 hover:bg-white/5 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-primary">headset_mic</span>
+                            <span class="text-xs font-bold opacity-50 uppercase tracking-tighter">AI AGENT</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-bold mb-3">Rizza AI Voice Agent</h3>
+                        <p class="text-slate-400 text-sm mb-6">Bilingual conversational AI system with real-time speech
+                            recognition and natural voice responses.</p>
+                        <div class="text-xs text-primary font-bold">Python • Groq • Web Speech</div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl glass-panel p-8 hover:bg-white/5 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent-cyan">play_circle</span>
+                            <span class="text-xs font-bold opacity-50 uppercase tracking-tighter">STREAMING</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-bold mb-3">Advanced DRM Player</h3>
+                        <p class="text-slate-400 text-sm mb-6">Custom web media player supporting DASH, HLS, and
+                            ClearKey DRM with proxy routing.</p>
+                        <div class="text-xs text-accent-cyan font-bold">JavaScript • DASH • DRM</div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl glass-panel p-8 hover:bg-white/5 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent-violet">hub</span>
+                            <span class="text-xs font-bold opacity-50 uppercase tracking-tighter">AUTOMATION</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-bold mb-3">n8n AI Pipeline</h3>
+                        <p class="text-slate-400 text-sm mb-6">Automated workflow for script generation, TTS conversion,
+                            and content publishing.</p>
+                        <div class="text-xs text-accent-violet font-bold">n8n • AI APIs • Automation</div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl glass-panel p-8 hover:bg-white/5 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-white">grid_view</span>
+                            <span class="text-xs font-bold opacity-50 uppercase tracking-tighter">PLATFORM</span>
+                        </div>
+                        <h3 class="font-outfit text-2xl font-bold mb-3">Web Utility Hub</h3>
+                        <p class="text-slate-400 text-sm mb-6">Comprehensive toolkit for PDF manipulation, image
+                            processing, and developer utilities.</p>
+                        <div class="text-xs text-slate-200 font-bold">HTML5 • JS • Modular</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="pb-40">
+                <div class="glass-panel p-10 lg:p-20 rounded-[40px] text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-primary/10 blur-[80px]"></div>
+                    <span class="text-xs font-bold tracking-widest text-primary uppercase mb-8 block">// CONTACT</span>
+                    <h2 class="font-outfit text-[32px] lg:text-[60px] font-bold leading-tight mb-12">Building something
+                        <br /> <span class="text-slate-400">intelligent?</span></h2>
+                    <a href="mailto:ashmitsingh0402@gmail.com"
+                        class="text-2xl lg:text-5xl font-bold font-outfit border-b border-white/10 pb-4 hover:border-primary transition-all">ashmitsingh0402@gmail.com</a>
+                    <div class="flex justify-center gap-8 mt-16">
+                        <a href="https://github.com/ashmitsingh001" target="_blank"
+                            class="text-slate-400 hover:text-white transition-colors">GitHub</a>
+                        <a href="#" target="_blank"
+                            class="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+                        <a href="#" target="_blank"
+                            class="text-slate-400 hover:text-white transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer / Bottom Nav -->
+        <nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-center">
+            <div class="mx-4 mb-4 glass-panel rounded-full px-4 py-2 flex items-center gap-2 lg:gap-8 shadow-2xl">
+                <a class="flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-full text-primary"
+                    href="#home">
+                    <span class="material-symbols-outlined text-[28px] font-fill">home</span>
+                    <span class="text-[10px] uppercase font-bold tracking-tighter">Home</span>
+                </a>
+                <a class="flex flex-col items-center justify-center gap-1 px-4 py-2 text-slate-400 hover:text-white transition-colors"
+                    href="#about">
+                    <span class="material-symbols-outlined text-[28px]">person</span>
+                    <span class="text-[10px] uppercase font-bold tracking-tighter">About</span>
+                </a>
+                <a class="flex flex-col items-center justify-center gap-1 px-4 py-2 text-slate-400 hover:text-white transition-colors"
+                    href="#stack">
+                    <span class="material-symbols-outlined text-[28px]">layers</span>
+                    <span class="text-[10px] uppercase font-bold tracking-tighter">Stack</span>
+                </a>
+                <a class="flex flex-col items-center justify-center gap-1 px-4 py-2 text-slate-400 hover:text-white transition-colors"
+                    href="#projects">
+                    <span class="material-symbols-outlined text-[28px]">work</span>
+                    <span class="text-[10px] uppercase font-bold tracking-tighter">Work</span>
+                </a>
+                <a class="flex flex-col items-center justify-center gap-1 px-4 py-2 text-slate-400 hover:text-white transition-colors"
+                    href="#contact">
+                    <span class="material-symbols-outlined text-[28px]">alternate_email</span>
+                    <span class="text-[10px] uppercase font-bold tracking-tighter">Contact</span>
                 </a>
             </div>
+        </nav>
 
-            <div class="nav-center">
-                <div class="nav-links">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#skills" class="nav-link">Stack</a>
-                    <a href="#projects" class="nav-link">Work</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-            </div>
-
-            <button class="menu-toggle" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav">
-        <div class="mobile-nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Stack</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
+        <!-- Decorative Element -->
+        <div
+            class="absolute top-[40%] -right-20 opacity-20 pointer-events-none overflow-hidden rotate-12 hidden lg:block">
+            <div class="w-64 h-64 border-[32px] border-primary/40 rounded-full"></div>
         </div>
     </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text fade-up">
-                    <h1 class="hero-title">Building Digital <br> Experiences with <span>Precision.</span></h1>
-                    <p class="hero-subtitle">Creative Developer & Digital Architect specializing in premium <br>
-                        cinematic experiences and high-performance interfaces.</p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-stats-bar">
-                <div class="container stats-bar-content">
-                    <div class="stat-item"><span>5+</span> Years Exp.</div>
-                    <div class="stat-circle"></div>
-                    <div class="stat-item"><span>50+</span> Projects</div>
-                    <div class="stat-circle"></div>
-                    <div class="stat-item"><span>Fluent</span> in design</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about section-padding">
-            <div class="container about-grid">
-                <div class="about-text fade-up">
-                    <span class="section-label">// THE NARRATIVE</span>
-                    <h2 class="display-text">I bridge the gap between complex engineering and <span>high-end
-                            design.</span></h2>
-                    <p class="body-text">I specialize in building intelligent, atmospheric digital experiences that
-                        prioritize performance and luxury aesthetics. My approach combines clean UI engineering with
-                        strong backend architecture and AI integration.</p>
-                </div>
-                <div class="about-stats fade-up">
-                    <div class="glass-container stats-premium">
-                        <div class="stat-premium-item">
-                            <div class="stat-val">5+</div>
-                            <div class="stat-lab">Years Exp.</div>
-                        </div>
-                        <div class="stat-premium-item">
-                            <div class="stat-val">50+</div>
-                            <div class="stat-lab">Projects</div>
-                        </div>
-                        <div class="stat-premium-item">
-                            <div class="stat-val">2x</div>
-                            <div class="stat-lab">Speed.</div>
-                        </div>
-                        <div class="stat-premium-item">
-                            <div class="stat-val">100%</div>
-                            <div class="stat-lab">Precision</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Stack -->
-        <section id="skills" class="stack section-padding">
-            <div class="container">
-                <div class="section-header fade-up">
-                    <span class="section-label">// TECHNICAL STACK</span>
-                    <h2 class="section-title">Elevated Tools for <span>Exceptional Systems.</span></h2>
-                </div>
-
-                <div class="stack-grid">
-                    <div class="stack-card glass-card fade-up">
-                        <div class="stack-icon"></div>
-                        <h3 class="stack-name">React & Next.js</h3>
-                        <p class="stack-desc">High-performance cinematic interfaces with seamless interactivity.</p>
-                    </div>
-                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.1s;">
-                        <div class="stack-icon"></div>
-                        <h3 class="stack-name">Node.js & Python</h3>
-                        <p class="stack-desc">Scalable backend architectures and intelligent automation pipelines.</p>
-                    </div>
-                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.2s;">
-                        <div class="stack-icon"></div>
-                        <h3 class="stack-name">AI Engineering</h3>
-                        <p class="stack-desc">Integrating LLMs, voice agents, and predictive systems into products.</p>
-                    </div>
-                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.3s;">
-                        <div class="stack-icon"></div>
-                        <h3 class="stack-name">Figma & Design</h3>
-                        <p class="stack-desc">High-fidelity UI/UX design with a focus on luxury aesthetic flows.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="work section-padding">
-            <div class="container">
-                <div class="section-header fade-up">
-                    <span class="section-label">// SELECTED WORKS</span>
-                    <h2 class="section-title">Curated Digital <span>Experiences.</span></h2>
-                </div>
-
-                <div class="work-grid">
-                    <div class="work-card glass-card fade-up">
-                        <div class="work-img-placeholder"></div>
-                        <div class="work-info">
-                            <h3 class="work-title">Rizza AI Voice Agent</h3>
-                            <p class="work-meta">Python • Groq • Web Speech</p>
-                        </div>
-                    </div>
-                    <div class="work-card glass-card fade-up">
-                        <div class="work-img-placeholder"></div>
-                        <div class="work-info">
-                            <h3 class="work-title">Advanced DRM Player</h3>
-                            <p class="work-meta">JS • Dash • HLS</p>
-                        </div>
-                    </div>
-                    <div class="work-card glass-card fade-up">
-                        <div class="work-img-placeholder"></div>
-                        <div class="work-info">
-                            <h3 class="work-title">n8n Automation Pipeline</h3>
-                            <p class="work-meta">n8n • AI • Workflow</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section-padding">
-            <div class="container">
-                <div class="contact-card glass-card fade-up">
-                    <h2 class="contact-card-title">Interested in building something <span>intelligent?</span></h2>
-                    <a href="mailto:ashmitsingh0402@gmail.com" class="contact-big-email">ashmitsingh0402@gmail.com</a>
-                    <div class="contact-footer">
-                        <p>Open for internhips & collaborations</p>
-                        <div class="contact-socials">
-                            <a href="https://github.com/ashmitsingh001" target="_blank">Github</a>
-                            <a href="#" target="_blank">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 Ashmit Singh</p>
-            <div class="footer-links">
-                <span>Refined & Polished</span>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
+house
