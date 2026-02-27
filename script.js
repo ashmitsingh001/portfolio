@@ -23,13 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Scroll Effects
+    // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Update Progress Bar
         const scrolled = window.scrollY;
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (scrolled / maxScroll) * 100;
-
-        // Update Progress Bar
         if (scrollProgress) {
             scrollProgress.style.width = `${scrollPercent}%`;
         }
