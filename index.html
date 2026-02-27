@@ -15,7 +15,11 @@
 
 <body>
     <div class="scroll-progress"></div>
-    <div class="glow-effect"></div>
+    <!-- Cinematic Background -->
+    <div class="bg-scene">
+        <div class="aura aura-1"></div>
+        <div class="aura aura-2"></div>
+    </div>
 
     <nav class="navbar">
         <div class="nav-container container">
@@ -57,182 +61,142 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero" id="home">
+        <section id="home" class="hero">
             <div class="container hero-content">
-                <div class="hero-reveal">
-                    <h1 class="hero-title fade-up">ASHMIT SINGH</h1>
-                    <p class="hero-subtitle fade-up">Full-Stack Developer • AI Systems Builder • Creative
-                        Technologist<span>.</span></p>
-                    <p class="hero-description fade-up">Turning complex ideas into intelligent, scalable digital systems
-                        powered by AI.</p>
+                <div class="hero-text fade-up">
+                    <h1 class="hero-title">Building Digital <br> Experiences with <span>Precision.</span></h1>
+                    <p class="hero-subtitle">Creative Developer & Digital Architect specializing in premium <br>
+                        cinematic experiences and high-performance interfaces.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
                 </div>
-                <div class="hero-actions fade-up">
-                    <a href="#projects" class="btn btn-silver">View Projects</a>
-                    <a href="#contact" class="btn btn-line">Contact Me</a>
+            </div>
+            <div class="hero-stats-bar">
+                <div class="container stats-bar-content">
+                    <div class="stat-item"><span>5+</span> Years Exp.</div>
+                    <div class="stat-circle"></div>
+                    <div class="stat-item"><span>50+</span> Projects</div>
+                    <div class="stat-circle"></div>
+                    <div class="stat-item"><span>Fluent</span> in design</div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="about section-padding" id="about">
-            <div class="container">
-                <div class="about-content">
-                    <h2 class="section-label fade-up">// ABOUT ME</h2>
-                    <p class="display-text fade-up">Hi, I’m Ashmit — a full-stack developer focused on building
-                        intelligent, real-time digital systems.</p>
-                    <p class="body-text fade-up">I specialize in AI-powered applications, voice-based systems,
-                        automation pipelines, and modern web platforms. My approach combines clean UI engineering with
+        <section id="about" class="about section-padding">
+            <div class="container about-grid">
+                <div class="about-text fade-up">
+                    <span class="section-label">// THE NARRATIVE</span>
+                    <h2 class="display-text">I bridge the gap between complex engineering and <span>high-end
+                            design.</span></h2>
+                    <p class="body-text">I specialize in building intelligent, atmospheric digital experiences that
+                        prioritize performance and luxury aesthetics. My approach combines clean UI engineering with
                         strong backend architecture and AI integration.</p>
-                    <p class="body-text fade-up">From conversational AI assistants to advanced web tools and automation
-                        systems, I enjoy building products that are technically strong, efficient, and user-focused.</p>
-                    <p class="body-text fade-up">I am constantly experimenting, building, and refining — always
-                        learning, always shipping.</p>
-
-                    <div class="stats-grid fade-up">
-                        <div class="stat-item">
-                            <span class="stat-number">Rapid</span>
-                            <span class="stat-label">Prototyping</span>
+                </div>
+                <div class="about-stats fade-up">
+                    <div class="glass-container stats-premium">
+                        <div class="stat-premium-item">
+                            <div class="stat-val">5+</div>
+                            <div class="stat-lab">Years Exp.</div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">AI</span>
-                            <span class="stat-label">Centric Design</span>
+                        <div class="stat-premium-item">
+                            <div class="stat-val">50+</div>
+                            <div class="stat-lab">Projects</div>
+                        </div>
+                        <div class="stat-premium-item">
+                            <div class="stat-val">2x</div>
+                            <div class="stat-lab">Speed.</div>
+                        </div>
+                        <div class="stat-premium-item">
+                            <div class="stat-val">100%</div>
+                            <div class="stat-lab">Precision</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="skills section-padding" id="skills">
+        <!-- Technical Stack -->
+        <section id="skills" class="stack section-padding">
             <div class="container">
-                <h2 class="section-label fade-up">// SKILLS</h2>
-                <div class="skills-container fade-up">
-                    <div class="skill-category">
-                        <h3>Programming</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Dart</span>
-                            <span class="skill-tag">PHP</span>
-                        </div>
+                <div class="section-header fade-up">
+                    <span class="section-label">// TECHNICAL STACK</span>
+                    <h2 class="section-title">Elevated Tools for <span>Exceptional Systems.</span></h2>
+                </div>
+
+                <div class="stack-grid">
+                    <div class="stack-card glass-card fade-up">
+                        <div class="stack-icon"></div>
+                        <h3 class="stack-name">React & Next.js</h3>
+                        <p class="stack-desc">High-performance cinematic interfaces with seamless interactivity.</p>
                     </div>
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                            <span class="skill-tag">Web Speech API</span>
-                        </div>
+                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.1s;">
+                        <div class="stack-icon"></div>
+                        <h3 class="stack-name">Node.js & Python</h3>
+                        <p class="stack-desc">Scalable backend architectures and intelligent automation pipelines.</p>
                     </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">WebSockets</span>
-                        </div>
+                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.2s;">
+                        <div class="stack-icon"></div>
+                        <h3 class="stack-name">AI Engineering</h3>
+                        <p class="stack-desc">Integrating LLMs, voice agents, and predictive systems into products.</p>
                     </div>
-                    <div class="skill-category">
-                        <h3>AI & APIs</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">Groq LLM</span>
-                            <span class="skill-tag">OpenRouter</span>
-                            <span class="skill-tag">DeepSeek API</span>
-                            <span class="skill-tag">A4F TTS</span>
-                            <span class="skill-tag">Prompt Engineering</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Mobile</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">Android Studio</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <div class="skills-flex">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">n8n</span>
-                            <span class="skill-tag">Docker</span>
-                        </div>
+                    <div class="stack-card glass-card fade-up" style="transition-delay: 0.3s;">
+                        <div class="stack-icon"></div>
+                        <h3 class="stack-name">Figma & Design</h3>
+                        <p class="stack-desc">High-fidelity UI/UX design with a focus on luxury aesthetic flows.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section class="projects section-padding" id="projects">
+        <section id="projects" class="work section-padding">
             <div class="container">
-                <h2 class="section-label fade-up">// SELECTED WORK</h2>
-                <div class="project-list">
-                    <!-- Rizza AI -->
-                    <div class="project-item fade-up">
-                        <div class="project-info">
-                            <h3 class="project-title">Rizza AI — Real-Time Voice Assistant</h3>
-                            <p class="project-desc">A bilingual conversational AI system with real-time speech
-                                recognition and natural voice responses. Support for Hindi & English.</p>
-                            <div class="project-meta">Python • Flask • Groq API • Web Speech API</div>
+                <div class="section-header fade-up">
+                    <span class="section-label">// SELECTED WORKS</span>
+                    <h2 class="section-title">Curated Digital <span>Experiences.</span></h2>
+                </div>
+
+                <div class="work-grid">
+                    <div class="work-card glass-card fade-up">
+                        <div class="work-img-placeholder"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">Rizza AI Voice Agent</h3>
+                            <p class="work-meta">Python • Groq • Web Speech</p>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
                     </div>
-                    <!-- Advanced DRM Media Player -->
-                    <div class="project-item fade-up">
-                        <div class="project-info">
-                            <h3 class="project-title">Advanced DRM Media Player</h3>
-                            <p class="project-desc">Custom web media player supporting DASH, HLS, ClearKey DRM, and
-                                proxy routing with debug inspection tools.</p>
-                            <div class="project-meta">JavaScript • Streaming Protocols • DRM Architecture</div>
+                    <div class="work-card glass-card fade-up">
+                        <div class="work-img-placeholder"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">Advanced DRM Player</h3>
+                            <p class="work-meta">JS • Dash • HLS</p>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
                     </div>
-                    <!-- Multi-Tool Web Utility Platform -->
-                    <div class="project-item fade-up">
-                        <div class="project-info">
-                            <h3 class="project-title">Multi-Tool Web Utility Platform</h3>
-                            <p class="project-desc">Comprehensive toolkit for PDF manipulation, image processing, JWT
-                                decoding, and developer utilities.</p>
-                            <div class="project-meta">HTML • CSS • JavaScript • Modular Design</div>
+                    <div class="work-card glass-card fade-up">
+                        <div class="work-img-placeholder"></div>
+                        <div class="work-info">
+                            <h3 class="work-title">n8n Automation Pipeline</h3>
+                            <p class="work-meta">n8n • AI • Workflow</p>
                         </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                    <!-- AI Automation Pipeline -->
-                    <div class="project-item fade-up">
-                        <div class="project-info">
-                            <h3 class="project-title">AI Automation Pipeline (n8n Agent)</h3>
-                            <p class="project-desc">Automated workflow that generates scripts, converts to audio,
-                                creates visuals, and publishes content automatically.</p>
-                            <div class="project-meta">n8n • AI APIs • Automation Systems</div>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="contact section-padding" id="contact">
+        <section id="contact" class="contact section-padding">
             <div class="container">
-                <div class="contact-wrap fade-up">
-                    <h2 class="contact-title">Interested in building something intelligent?</h2>
-                    <a href="mailto:ashmitsingh0402@gmail.com" class="contact-email">ashmitsingh0402@gmail.com</a>
-                    <div class="contact-info">
-                        <p>India • Open to internships, freelance & collaborations</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/ashmitsingh001" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">LinkedIn</a>
-                        <a href="#" target="_blank">X / Twitter</a>
+                <div class="contact-card glass-card fade-up">
+                    <h2 class="contact-card-title">Interested in building something <span>intelligent?</span></h2>
+                    <a href="mailto:ashmitsingh0402@gmail.com" class="contact-big-email">ashmitsingh0402@gmail.com</a>
+                    <div class="contact-footer">
+                        <p>Open for internhips & collaborations</p>
+                        <div class="contact-socials">
+                            <a href="https://github.com/ashmitsingh001" target="_blank">Github</a>
+                            <a href="#" target="_blank">LinkedIn</a>
+                        </div>
                     </div>
                 </div>
             </div>
